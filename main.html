@@ -7,10 +7,11 @@
     <style>
         /* Background color */
         body {
-            background-color: lightblue; /* You can change this to any color you like */
+            background-color: lightblue;
             font-family: Arial, sans-serif;
             text-align: center;
             padding-top: 50px;
+            margin: 0;
         }
 
         /* Button styling */
@@ -26,7 +27,7 @@
         }
 
         button:hover {
-            background-color: #028a5e; /* slightly darker on hover */
+            background-color: #028a5e;
         }
 
         h1 {
@@ -36,14 +37,62 @@
         p {
             color: #222;
         }
+
+        /* Canvas styling */
+        #cube-container {
+            width: 400px;
+            height: 400px;
+            margin: 50px auto;
+        }
     </style>
 </head>
 <body>
     <h1>RYJGbuds</h1>
-    <p>testing testing 123.</p>
+    <p>Made for school.</p>
     <button type="button" onclick="window.location.href='helper.html'">Go to helper</button>
-</br>
-</br>
-    <button type="button" onclick="window.location.href='about.html'">Go to the about page</button>
-</body>
-</html>
+    </br></br>
+    <button type="button" onclick="window.location.href='about.html'">Go to about page</button>
+    </br></br>
+
+   <!-- Cube container -->
+<div id="cube-container"></div>
+
+<!-- Three.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+<script>
+    // Scene setup 6 7
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+    
+    const container = document.getElementById('cube-container');
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(renderer.domElement);
+
+// Cube 6 7
+const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshBasicMaterial({ color: 0x0000ff, wireframe: true }); // blue lines
+const cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
+
+
+    camera.position.z = 3;
+
+    // Animation 6 7
+    function animate() {
+        requestAnimationFrame(animate);
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    // resizing 6 7
+    window.addEventListener('resize', () => {
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+    });
+</script>
+
+
