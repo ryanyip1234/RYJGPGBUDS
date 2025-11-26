@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".css">
+        <title>Help</title>
     </head>
     <style>
 
@@ -18,23 +20,82 @@ body {
     padding-top: 50px;
     margin: 0;
 }
+.toolbar {
+    background-color: #028a5e;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+     border-radius: 16px;
+}
 
+.toolbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.toolbar:hover {
+animation: pulseEffect 0.6s infinite alternate;
+
+}
+/*background-color: #04AA6D;
+/* Keyframes for Pulse Effect */
+@keyframes pulseEffect {
+from {
+transform: scale(1);
+box-shadow: 0px 4px 10px rgba(2, 171, 72, 0.5);
+}
+to {
+transform: scale(1.1);
+box-shadow: 0px 6px 20px rgba(2, 141, 30, 0.7);
+}
+}
+    
+
+/* ===== Buttons ===== */
 button {
-    background-color: #04AA6D;
+    background-color: #0f9e6a;
     color: rgb(255, 213, 203);
     padding: 15px 32px;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 16px;
     cursor: pointer;
     transition: 0.3s;
+    text-shadow : 2px 2px 2px rgba(0, 0, 0, 0.462);
+     border-radius: 16px;
+     animation: glow 1.8s infinite;
+}
+@keyframes glow {
+    0% {box-shadow: 0 0 5px rgba(255, 255, 255, 0.6);}
+    50% {box-shadow: 0 0 25px rgba(242, 242, 242, 0.8);}
+    100% {box-shadow: 0 0 5px rgba(255, 255, 255, 0.6);}
+
 }
 
-button:hover { background-color: #028a5e; }
-
+button:hover { 
+    background-color: #36a253; 
+}
+button:clicked {
+    border-color:#8a3602
+}
     </style>
     <body>
-       
+<div class="toolbar">
+    <button><a href="index.html" onclick="navigateWithFade('index.html')">Home</a></button>
+    <button><a href="Help.html" onclick="navigateWithFade('Help.html')">Help</a></button>
+    <button><a href="about.html" onclick="navigateWithFade('about.html')">About</a></button>
+    <button><a href="timeline.html" onclick="navigateWithFade('timeline.html')">Updates</a></button>
+
+</div>
        <img src="Speak.png" alt="Speak image made by PranavejGrandhe" style="width:1400px;height:800px;">
     </br>
 </br>
