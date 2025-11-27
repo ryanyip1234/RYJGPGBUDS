@@ -1,35 +1,30 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>RYJGPGBUDS - Home</title>
 
-<!-- Animate.css added -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href=".css">
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 <style>
 /* ===== Body ===== */
 body {
-    background-color: lightblue;
-    font-family: Arial, sans-serif;
-    text-align: center;
     margin: 0;
-    padding-top: 90px; /* space for toolbar */
+    padding-top: 90px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(320deg, #eb92be, #ffef78);
     transition: opacity 0.5s;
-    opacity: 1;
 }
 
 body.fade-out {
     opacity: 0;
 }
-
-h1 { color: #000000; }
-p { color: #222; }
 
 /* ===== Toolbar ===== */
 .toolbar {
@@ -45,13 +40,19 @@ p { color: #222; }
     border-radius: 16px;
 }
 
-.toolbar a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
+.toolbar button {
+    background: none;
+    border: 2px solid white;
     padding: 8px 14px;
-    border-radius: 4px;
-    transition: background 0.2s;
+    border-radius: 6px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.25s;
+}
+
+.toolbar button:hover {
+    background: rgba(255,255,255,0.15);
 }
 
 .toolbar:hover {
@@ -59,41 +60,49 @@ p { color: #222; }
 }
 
 @keyframes pulseEffect {
-    from {
-        transform: scale(1);
-        box-shadow: 0px 4px 10px rgba(2, 171, 72, 0.5);
-    }
-    to {
-        transform: scale(1.1);
-        box-shadow: 0px 6px 20px rgba(2, 141, 30, 0.7);
-    }
+    from { transform: scale(1); box-shadow: 0px 4px 10px rgba(2, 171, 72, 0.5); }
+    to { transform: scale(1.08); box-shadow: 0px 6px 20px rgba(2, 141, 30, 0.7); }
+}
+
+/* ===== Main Title ===== */
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+    color: #ffef78;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+/* ===== Paragraphs ===== */
+p, small {
+    color: #222;
 }
 
 /* ===== Buttons ===== */
-button {
+button.main-btn {
     background-color: #0f9e6a;
-    color: rgb(255, 213, 203);
+    color: #ffd5cb;
     padding: 15px 32px;
     font-size: 16px;
     border: none;
     border-radius: 16px;
     cursor: pointer;
     transition: 0.3s;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.462);
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.45);
     animation: glow 1.8s infinite;
 }
 
 @keyframes glow {
-    0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.6); }
-    50% { box-shadow: 0 0 25px rgba(242, 242, 242, 0.8); }
-    100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.6); }
+    0% { box-shadow: 0 0 5px rgba(255,255,255,0.6); }
+    50% { box-shadow: 0 0 25px rgba(242,242,242,0.8); }
+    100% { box-shadow: 0 0 5px rgba(255,255,255,0.6); }
 }
 
-button:hover { 
-    background-color: #36a253; 
+button.main-btn:hover {
+    background-color: #36a253;
 }
 
-/* ===== Cube container ===== */
+/* ===== Cube Container ===== */
 #cube-container {
     width: 200px;
     height: 200px;
@@ -101,7 +110,6 @@ button:hover {
     perspective: 800px;
 }
 
-/* ===== Cube ===== */
 .cube {
     width: 100%;
     height: 100%;
@@ -128,7 +136,7 @@ button:hover {
 
 @keyframes spin {
     from { transform: rotateX(0deg) rotateY(0deg); }
-    to   { transform: rotateX(360deg) rotateY(360deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
 }
 
 /* ===== Footer ===== */
@@ -148,20 +156,16 @@ footer fieldset {
 
 <!-- ===== Toolbar ===== -->
 <div class="toolbar">
-    <button><a href="index.html" onclick="navigateWithFade('index.html')">Home</a></button>
-    <button><a href="Help.html" onclick="navigateWithFade('Help.html')">Help</a></button>
-    <button><a href="about.html" onclick="navigateWithFade('about.html')">About</a></button>
-    <button><a href="timeline.html" onclick="navigateWithFade('timeline.html')">Updates</a></button>
+    <button onclick="navigateWithFade('index.html')">Home</button>
+    <button onclick="navigateWithFade('Help.html')">Help</button>
+    <button onclick="navigateWithFade('about.html')">About</button>
+    <button onclick="navigateWithFade('timeline.html')">Updates</button>
 </div>
 
 <!-- ===== Animated Title ===== -->
-<h1 class="animate__animated animate__bounce animate__infinite">
-    RYJGPGBUDS
-</h1>
-
+<h1 class="animate__animated animate__bounce animate__infinite">RYJGPGBUDS</h1>
 <p>Made for shopping.</p>
-<small><small>Programmed by Jackson Green, Ryan Yip, and Pranav Grandhe</small></small>
-<br>
+<small>Programmed by Jackson Green, Ryan Yip, and Pranav Grandhe</small><br>
 <small>Copyright reserved</small>
 
 <!-- ===== CSS Cube ===== -->
@@ -176,10 +180,10 @@ footer fieldset {
     </div>
 </div>
 
+<!-- ===== Footer ===== -->
 <footer>
     <fieldset>
-        This was created using HTML and CSS. Reminder: 
-        this is still a beta release, so expect bugs.
+        This was created using HTML and CSS. Reminder: this is still a beta release, so expect bugs.
     </fieldset>
 </footer>
 
@@ -195,3 +199,5 @@ function navigateWithFade(url) {
 
 </body>
 </html>
+
+
