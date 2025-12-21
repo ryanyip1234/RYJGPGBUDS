@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop! - Shopping Made Easy</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        body {
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+
+        .flip-card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+            opacity: 0; /* Start hidden */
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+
+        .flip-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .flip-card-back {
+            background-color: #f1f1f1;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="toolbar">
+    <button onclick="navigateWithFade('index.html')">Home</button>
+    <button onclick="navigateWithFade('Help.html')">Help</button>
+    <button onclick="navigateWithFade('about.html')">About</button>
+    <button onclick="navigateWithFade('timeline.html')">Updates</button>
+    <button onclick="navigateWithFade('shop.html')">Shop</button>
+</div>
+
+<h1 class="animate__animated animate__bounce animate__infinite">Shop!</h1>
+
+<fieldset class="scroll-reveal">
+    Get great deals on our 100% off Christmas items! Limited time offer!
+</fieldset>
+
+<br><br><br>
+
+<div class="flip-card-container">
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 1</h1>
+                <p>100% OFF!</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 2</h1>
+                <p>Limited Deal</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 3</h1>
+                <p>Special Offer</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add more cards here -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 1</h1>
+                <p>100% OFF!</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 2</h1>
+                <p>Limited Deal</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 3</h1>
+                <p>Special Offer</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div> <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 1</h1>
+                <p>100% OFF!</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 2</h1>
+                <p>Limited Deal</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 3</h1>
+                <p>Special Offer</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div> <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 1</h1>
+                <p>100% OFF!</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 2</h1>
+                <p>Limited Deal</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 3</h1>
+                <p>Special Offer</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div> <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 1</h1>
+                <p>100% OFF!</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 2</h1>
+                <p>Limited Deal</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 3</h1>
+                <p>Special Offer</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div> <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 1</h1>
+                <p>100% OFF!</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 2</h1>
+                <p>Limited Deal</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="https://via.placeholder.com/300" alt="Item">
+            </div>
+            <div class="flip-card-back">
+                <h1>Item 3</h1>
+                <p>Special Offer</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Toolbar fade navigation
+    function navigateWithFade(page) {
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+            window.location.href = page;
+        }, 500);
+    }
+
+    // Scroll reveal on cards as you scroll down
+    const cards = document.querySelectorAll('.flip-card');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                // Delay based on card index for stagger effect
+                const index = Array.from(cards).indexOf(entry.target);
+                setTimeout(() => {
+                    entry.target.classList.add('show');
+                }, index * 150); // 150ms per card stagger
+                observer.unobserve(entry.target); // Reveal only once
+            }
+        });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>
+
+
+
+

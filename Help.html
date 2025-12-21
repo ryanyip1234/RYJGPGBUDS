@@ -4,47 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <h1 class="animate__animated animate__tada animate__infinite">
-    Help Page
-</h1>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-<link rel="stylesheet" href="main.css">
-<style>
+    <title>Help</title>
 
-</style>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        /* ===== Toolbar ===== */
+        .toolbar {
+            display: flex;
+            gap: 10px;
+            padding: 12px;
+            background-color: #111;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .toolbar button {
+            font-family: 'Poppins', sans-serif;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+        }
+
+        .toolbar button:hover {
+            background-color: #555;
+            transform: translateY(-2px);
+        }
+
+        /* ===== Page Content ===== */
+        .container {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            margin-top: 40px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            font-weight: 400;
+            max-width: 750px;
+        }
+
+        .help-image {
+            width: 200px;
+            display: block;
+            margin: 30px auto;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* ===== Scroll Animation ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== Animations ===== */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Fade-out transition */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+    </style>
 </head>
 
 <body>
 
 <!-- ===== Toolbar ===== -->
-<div class="toolbar">
+<div class="toolbar animate__animated animate__fadeInDown">
     <button onclick="navigateWithFade('index.html')">Home</button>
-    <button onclick="navigateWithFade('Help.html')">Help</button>
+    <button onclick="navigateWithFade('help.html')">Help</button>
     <button onclick="navigateWithFade('about.html')">About</button>
     <button onclick="navigateWithFade('timeline.html')">Updates</button>
+    <button onclick="navigateWithFade('shop.html')">Shop</button>
 </div>
 
-<!-- Image -->
-<img src="Speak.png" alt="Speak image made by Pranav Grandhe" class="help-image">
+<!-- ===== Content ===== -->
+<div class="container">
 
-<h1>How to Use Our Website</h1>
-<p>
-    To use our shop, first sign in with your Google account. Once signed in,
-    you can access the shop by clicking the "Bring me to shop" button located
-    at the top right corner of the webpage.
-    The helper provides tools and resources to guide you through your purchases.
-    You can browse shirts, check to-do lists, and access important documents.
-    Make sure to explore all features to get the most out of your experience!
-</p>
+    <h1 class="reveal">Help Page</h1>
 
-<h1>Contact Us</h1>
-<p>
-    If you have any questions or need assistance, feel free to contact us:
-    <br><br>
-    <strong>Phone:</strong> 201-724-8021
-</p>
+    <img src="Speak.png" alt="Speak image made by Pranav Grandhe" class="help-image">
 
-<!-- ===== Fade Navigation Script ===== -->
+    <h2 class="reveal">How to Use Our Website</h2>
+
+    <p class="reveal">
+        Welcome! This website is designed to be simple, fast, and easy to use.
+        To get started, sign in using your Google account. Once you’re signed in,
+        you’ll unlock access to all available features.
+    </p>
+
+    <p class="reveal">
+        Use the <strong>Shop</strong> button in the toolbar to browse available items,
+        manage your selections, and explore what we offer. You can also keep track
+        of tasks, view updates, and access important resources directly from the site.
+    </p>
+
+    <p class="reveal">
+        If you ever feel stuck, this Help page is here to guide you.
+        Take your time exploring—everything is designed to be intuitive and user-friendly.
+    </p>
+
+    <h2 class="reveal">Contact Us</h2>
+
+    <p class="reveal">
+        Need help or have a question? We’re happy to assist.
+        Reach out using the contact information below and we’ll get back to you as soon as possible.
+    </p>
+
+    <p class="reveal">
+        <strong>Phone:</strong> 201-724-8021
+    </p>
+
+</div>
+
+<!-- ===== Scripts ===== -->
 <script>
 function navigateWithFade(url) {
     document.body.classList.add('fade-out');
@@ -52,7 +172,24 @@ function navigateWithFade(url) {
         window.location.href = url;
     }, 500);
 }
+
+/* ===== Scroll Reveal ===== */
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+        });
+    },
+    { threshold: 0.15 }
+);
+
+reveals.forEach(el => observer.observe(el));
 </script>
 
 </body>
 </html>
+
