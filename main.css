@@ -227,6 +227,27 @@ h1 {
     font-size: 16px;
 }
 
+#videoPopup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Make video clickable so sound works */
+#videoPopup video {
+    width: 70%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px black;
+    pointer-events: auto;
+}
 
 /* ===== Responsive ===== */
 @media (max-width: 1000px) {
