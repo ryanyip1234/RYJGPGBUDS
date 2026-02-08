@@ -148,6 +148,7 @@ h1 {
     height: 300px;
     perspective: 1000px;
     animation: fadeInUp 1s ease forwards;
+    transform: translateZ(0);
 }
 
 .flip-card-inner {
@@ -158,6 +159,7 @@ h1 {
     transform-style: preserve-3d;
     border-radius: 16px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    position: relative;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -170,25 +172,81 @@ h1 {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 16px;
 }
 
+/* Front image */
 .flip-card-front img {
     width: 100%;
     height: 100%;
-        border-radius: 16px;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    border-radius: 16px;
 }
 
-.flip-card:hover .flip-card-front img {
-    transform: scale(1.1);
-
-}
-
+/* ===== BACK SIDE BLUR EFFECT ===== */
 .flip-card-back {
-    background: #2980b9;
-    color: white;
     transform: rotateY(180deg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+/* Blur background image */
+.flip-card-back img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(6px);
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+/* Text + button on top of blur */
+.flip-card-back h1,
+.flip-card-back p,
+.flip-card-back button {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+/* Button style */
+.flip-card-back button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: black;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#videoPopup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Make video clickable so sound works */
+#videoPopup video {
+    width: 70%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px black;
+    pointer-events: auto;
 }
 
 /* ===== Responsive ===== */
